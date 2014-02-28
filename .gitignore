@@ -1,6 +1,9 @@
 .eunit
 deps
 _rel
+ebin
+logs
+relx
 *.o
 *.beam
 *.plt
