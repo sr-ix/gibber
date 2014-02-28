@@ -2,18 +2,33 @@
 <html lang="en-US">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Websocket client</title>
+    <title>Gibber Chat Client</title>
     <script src="/static/jquery.min.js"></script>
     <script type="text/javascript">
+      var websocket;
+      $(document).ready(init);
+      
+      function init() {
+          if(!("WebSocket" in window)){
+              $('#status').append('<p><span style="color: red;">websockets are not supported </span></p>');
+              $("#navigation").hide();
+          } else {
+              $('#status').append('<p><span style="color: green;">websockets are supported </span></p>');
+              connect();
+          };
+              $("#connected").hide();
+              $("#content").hide(); 
+      };
     </script>
 </head>
 <body>
     <div id="header">
-      <h1>Websocket client</h1>
+      <h1>Gibber Chat Client</h1>
+      <p>Powered by Erlang/OTP, Cowboy and Websockets</p>
       <div id="status"></div>
     </div>
     <div style="float:left;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">
-        <b>USERS</b>
+        <b>Users</b>
         <div id="users"></div>
     </div>
     <div style="float:left;width:300px;height:250px;overflow:scroll-y;padding:10px;">
