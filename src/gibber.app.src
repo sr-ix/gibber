@@ -1,0 +1,13 @@
+{application, gibber, [
+    {description, "Erlang/OTP version of the (now-outdated) Socket.IO chat tutorial originally by @mmuhkin"},
+    {vsn, "1"},
+    {modules, []},
+    {registered, [gibber_sup]},
+    {applications, [
+        kernel,
+        stdlib,
+        cowboy
+    ]},
+    {mod, {gibber_app, []}},
+    {env, []}
+]}.
