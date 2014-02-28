@@ -4,6 +4,7 @@ _rel
 ebin
 logs
 relx
+.erlang.mk.packages.*
 *.o
 *.beam
 *.plt
